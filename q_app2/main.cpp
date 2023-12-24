@@ -1,4 +1,10 @@
+//
+//
+//
+
 #include "mainwindow.h"
+
+#include "DebuggingConsole.h"
 
 #include <QApplication>
 #include <QLocale>
@@ -6,6 +12,8 @@
 
 int main(int argc, char *argv[])
 {
+    attachDebugConsole();
+
     QApplication a(argc, argv);
 
     QTranslator translator;
