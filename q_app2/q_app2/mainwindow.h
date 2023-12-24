@@ -17,6 +17,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void exit();
+    void newDocument();
+
 private:
     Ui::MainWindow *ui;
 };
