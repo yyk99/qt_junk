@@ -24,9 +24,7 @@ SlotDemo::SlotDemo(QWidget* parent) :
        SLOT(handleButtonLeft()));
     connect(&buttonRight,
        SIGNAL(released()), this,
-
- // Ammeraal, Leen.Computer Graphics Programming in C++ / Qt(p. 8).UNKNOWN.Kindle Edition.
-        SLOT(handleButtonRight()));
+       SLOT(handleButtonRight()));
     buttonLeft.setParent(this);
     buttonLeft.setText("Left");
     buttonRight.setParent(this);

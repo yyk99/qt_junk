@@ -1,0 +1,20 @@
+#
+#
+#
+
+cmake_minimum_required(VERSION 3.5)
+
+project(ammeraal)
+
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+source_group(Generated REGULAR_EXPRESSION "mocs.*cpp")
+
+# Use c:/qt/5.15.2/msvc2019_64/bin/windeployqt.exe
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+add_subdirectory(1.1)
+add_subdirectory(1.3)
