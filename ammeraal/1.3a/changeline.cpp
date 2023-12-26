@@ -23,6 +23,8 @@ ChangeLine::ChangeLine(QWidget* parent)
     buttonRight.setParent(this);
     buttonLeft.setText("Left");
     buttonRight.setText("Right");
+    buttonLeft.delta = -10;
+    buttonRight.delta = 10;
 }
 void ChangeLine::resizeEvent(
      QResizeEvent* e) {
@@ -50,10 +52,7 @@ void MyButton::mouseReleaseEvent(
      QMouseEvent* e) {
     ChangeLine* p =
         (ChangeLine*)(parent());
-    if (this == &(p->buttonLeft))
-        p->xDeviationPerc -= 10;
-    else
-        p->xDeviationPerc += 10;
+    p->xDeviationPerc += this->delta;
     p->repaint();
 }
 

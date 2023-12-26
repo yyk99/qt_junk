@@ -8,6 +8,7 @@ class MyButton : public QPushButton {
 public:
     void mouseReleaseEvent(
        QMouseEvent* e) override;
+    int delta = 0;
 };
 class ChangeLine : public QMainWindow {
     Q_OBJECT
