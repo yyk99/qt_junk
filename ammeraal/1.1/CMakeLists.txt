@@ -83,3 +83,6 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX sources)
 # C:\Users\yyk\src\qt_junk\ammeraal\build-cmake-win64\1.1\simpledraw_autogen\include_Debug\EWIEGA46WW\moc_simpledraw.cpp
 message(STATUS "CMAKE_CURRENT_BINARY_DIR=${CMAKE_CURRENT_BINARY_DIR}")
 source_group(TREE ${CMAKE_CURRENT_BINARY_DIR}/simpledraw_autogen PREFIX generated)
+
+get_filename_component(folder_name ${CMAKE_CURRENT_SOURCE_DIR}  NAME)
+set_property(TARGET simpledraw PROPERTY FOLDER ${folder_name})

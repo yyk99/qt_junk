@@ -79,3 +79,6 @@ install(TARGETS ${SINGLE_TARGET}
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(${SINGLE_TARGET})
 endif()
+
+get_filename_component(folder_name ${CMAKE_CURRENT_SOURCE_DIR}  NAME)
+set_property(TARGET ${SINGLE_TARGET} PROPERTY FOLDER ${folder_name})
