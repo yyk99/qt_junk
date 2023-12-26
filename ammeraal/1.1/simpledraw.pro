@@ -1,5 +1,5 @@
 # simpledraw.pro:
-QT += widgets
+QT += widgets gui core
 SOURCES += simpledraw.cpp
 HEADERS += simpledraw.h
 

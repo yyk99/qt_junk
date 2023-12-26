@@ -20,5 +20,6 @@ add_subdirectory(1.1)
 add_subdirectory(1.3)
 add_subdirectory(1.3a)
 add_subdirectory(1.4)
+add_subdirectory(1.5)
 
 # end of file
