@@ -20,7 +20,7 @@ set(PROJECT_SOURCES
     ${SINGLE_TARGET}.cpp
     ${SINGLE_TARGET}.h
     ${SINGLE_TARGET}main.cpp
-    points.h
+    ../common/points.h
     triangulate.cpp
     triangulate.h
     drawpolygon.cpp
