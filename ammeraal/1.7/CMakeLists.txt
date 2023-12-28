@@ -42,9 +42,6 @@ else()
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
-
-        message (STATUS "PROJECT_SOURCES=${PROJECT_SOURCES}")
-
         add_executable(${SINGLE_TARGET}
             ${PROJECT_SOURCES}
         )

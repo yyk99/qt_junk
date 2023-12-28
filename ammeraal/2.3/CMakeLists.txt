@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set (SINGLE_TARGET drawpolygon)
+set (SINGLE_TARGET scene)
 
 project(${SINGLE_TARGET} VERSION 0.1 LANGUAGES CXX)
 
@@ -19,8 +19,6 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 set(PROJECT_SOURCES
     ${SINGLE_TARGET}.cpp
     ${SINGLE_TARGET}.h
-    ${SINGLE_TARGET}main.cpp
-    points.h
     ${TS_FILES}
 )
 
