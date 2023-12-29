@@ -17,7 +17,7 @@ void Wireframe::paintEvent(
         // where next = 
         //    pol((k+1) % pol.size(),
         // in the vector ’edges’:
-        int n = polygon.nrs.size();
+        size_t n = polygon.nrs.size();
 
         // Ammeraal, Leen.Computer Graphics Programming in C++ / Qt(p. 100).UNKNOWN.Kindle Edition.
         for (int k = 0; k < n; k++) {

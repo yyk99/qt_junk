@@ -13,7 +13,7 @@ void DrawPolygonTrias::mousePressEvent(
               isCounterclockwise(v, pol))
             for (int i = 0; i < v.size();
                i++)
-                pol[i] = v.size() - 1 - i;
+                pol[i] = int(v.size()) - 1 - i;
         if (!Triangulate::triangulate(
             v, pol, trias)) {
             QMessageBox msgBox(this);

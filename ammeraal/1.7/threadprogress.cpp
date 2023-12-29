@@ -2,8 +2,7 @@
 #include "threadprogress.h"
 ThreadProgress::ThreadProgress(
   QWidget* parent) {
-    QRect rec = QApplication::desktop()
-        ->screenGeometry();
+    QRect rec = QGuiApplication::screens()[0]->geometry();
     int scrW = rec.width(),
         scrH = rec.height();
     setGeometry(scrW / 8, scrH / 6,

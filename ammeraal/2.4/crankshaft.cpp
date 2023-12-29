@@ -10,8 +10,7 @@ int main(int argc, char* argv[]) {
 }
 Crankshaft::Crankshaft(
      QWidget* parent) {
-    QRect rec = QApplication::desktop()
-        ->screenGeometry();
+    QRect rec = QGuiApplication::screens()[0]->geometry();
     int scrW = rec.width(),
         scrH = rec.height();
     qreal wD = 0.5 * scrW,

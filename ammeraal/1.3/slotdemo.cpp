@@ -8,9 +8,7 @@ int main(int argc, char* argv[]) {
 }
 SlotDemo::SlotDemo(QWidget* parent) :
     QMainWindow(parent) {
-    QRect rec =
-        QApplication::desktop()->
-        screenGeometry();
+    QRect rec = QGuiApplication::screens()[0]->geometry();
     int h = rec.height(),
         w = rec.width();
     setGeometry(w / 10, h / 10,

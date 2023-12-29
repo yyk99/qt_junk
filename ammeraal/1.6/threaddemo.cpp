@@ -3,8 +3,7 @@
 #include "threaddemo.h"
 ThreadDemo::ThreadDemo(
      QWidget* parent) {
-    QRect rec = QApplication::desktop()
-        ->screenGeometry();
+    QRect rec = QGuiApplication::screens()[0]->geometry();
     int scrW = rec.width(),
         scrH = rec.height();
     setGeometry(

@@ -2,8 +2,7 @@
 //              3D classes
 #include "basic3d.h"
 Basic3D::Basic3D(QWidget* parent) {
-    QRect rec = QApplication::desktop()
-        ->screenGeometry();
+    QRect rec = QGuiApplication::screens()[0]->geometry();
     int scrW = rec.width(),
         scrH = rec.height(),
         // Device dimensions
