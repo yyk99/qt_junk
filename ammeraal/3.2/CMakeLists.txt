@@ -16,15 +16,13 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
 # set(TS_FILES ${SINGLE_TARGET}_en_US.ts)
 
-include_directories(../3.1)
-
 set(PROJECT_SOURCES
     ${SINGLE_TARGET}.cpp
     ${SINGLE_TARGET}.h
     ${SINGLE_TARGET}main.cpp
-    ../3.1/basic3d.cpp
-    ../3.1/basic3d.h
-    ../3.1/points.h
+    ../common/basic3d.cpp
+    ../common/basic3d.h
+    ../common/points.h
     ${TS_FILES}
 )
 
