@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set (SINGLE_TARGET drawpolygontrias)
+set (SINGLE_TARGET hfaces)
 
 project(${SINGLE_TARGET} VERSION 0.1 LANGUAGES CXX)
 
@@ -20,11 +20,11 @@ set(PROJECT_SOURCES
     ${SINGLE_TARGET}.cpp
     ${SINGLE_TARGET}.h
     ${SINGLE_TARGET}main.cpp
+    ../common/basic3d.cpp
+    ../common/basic3d.h
     ../common/points.h
     ../common/triangulate.cpp
     ../common/triangulate.h
-    drawpolygon.cpp
-    drawpolygon.h
     ${TS_FILES}
 )
 

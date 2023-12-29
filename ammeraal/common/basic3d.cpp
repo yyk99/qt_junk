@@ -192,7 +192,7 @@ void Basic3D::inputObject() {
                             break;
                         }
                         int size =
-                            polygon.nrs.size();
+                            int(polygon.nrs.size());
                         if (size == 0 ||
                            (different(nr,
                                abs(polygon.nrs
@@ -313,7 +313,7 @@ void Basic3D::mousePressEvent(
     }
 }
 void Basic3D::computePerspCoord() {
-    int n = world.size();
+    int n = int(world.size());
     xsMin = 1e6; xsMax = -xsMin;
     ysMin = xsMin; ysMax = xsMax;
     qreal costh = cos(theta),

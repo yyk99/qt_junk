@@ -6,7 +6,7 @@ bool Triangulate::triangulate(
      const vector<Point2D>& scr,
   vector<int> pol,
      vector<Tria>& trias) {
-    int nv = pol.size(), k = nv;
+    int nv = int(pol.size()), k = nv;
     while (pol.size() > 2 && k-- > 0) {
         // Find a suitable triangle,
         // consisting of two polygon 
@@ -70,7 +70,7 @@ bool Triangulate::triangulate(
 bool Triangulate::anyFlipping(
      const vector<Point2D>& scr,
   vector<Tria>& tr) {
-    int length = tr.size();
+    int length = int(tr.size());
 
     // Ammeraal, Leen.Computer Graphics Programming in C++ / Qt(pp. 53 - 54).UNKNOWN.Kindle Edition.
     if (length < 2)
@@ -162,7 +162,7 @@ bool Triangulate::isCounterclockwise(
      const vector<Point2D>& scr,
      const vector<int>& nrs) {
     qreal xRight = -1e30, x;
-    int n = nrs.size(), j1 = 0, i = -1;
+    int n = int(nrs.size()), j1 = 0, i = -1;
     do {
         int j = (++i) % n;
         int k = abs(nrs[j]);
