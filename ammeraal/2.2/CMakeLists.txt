@@ -20,9 +20,6 @@ set(PROJECT_SOURCES
     ${SINGLE_TARGET}.cpp
     ${SINGLE_TARGET}.h
     ${SINGLE_TARGET}main.cpp
-    ../common/points.h
-    ../common/triangulate.cpp
-    ../common/triangulate.h
     drawpolygon.cpp
     drawpolygon.h
     ${TS_FILES}
@@ -56,6 +53,7 @@ else()
 endif()
 
 target_link_libraries(${SINGLE_TARGET} PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(${SINGLE_TARGET} PRIVATE common)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

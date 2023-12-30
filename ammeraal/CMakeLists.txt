@@ -18,6 +18,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 include_directories(common)
 
+add_subdirectory(common)
+
 add_subdirectory(1.1)
 add_subdirectory(1.3)
 add_subdirectory(1.3a)
