@@ -36,5 +36,6 @@ add_subdirectory(2.4)
 add_subdirectory(3.1)
 add_subdirectory(3.2)
 add_subdirectory(3.3)
+add_subdirectory(3.4)
 
 # end of file
