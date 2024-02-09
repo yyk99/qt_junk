@@ -13,6 +13,7 @@ public:
 
 public Q_SLOTS:
     void onFileConsole();
+    void onViewErrorLog();
 
 private:
     Ui::app1Class ui;

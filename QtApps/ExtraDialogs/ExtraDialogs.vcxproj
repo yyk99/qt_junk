@@ -17,7 +17,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0F5361E8-22A5-4E9F-9F5D-84AB7944D459}</ProjectGuid>
+    <ProjectGuid>{665B95FA-E175-4FAD-8C69-F8AEC3B0C532}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.22000.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.22000.0</WindowsTargetPlatformVersion>
@@ -25,11 +25,11 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -70,6 +70,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>EXTRADIALOGS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -82,6 +83,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>EXTRADIALOGS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -89,16 +91,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="app1.qrc" />
-    <QtUic Include="app1.ui" />
-    <QtMoc Include="app1.h" />
-    <ClCompile Include="app1.cpp" />
-    <ClCompile Include="main.cpp" />
+    <QtMoc Include="errorlogdialog.h" />
+    <ClInclude Include="extradialogs_global.h" />
+    <QtMoc Include="ExtraDialogs.h" />
+    <ClCompile Include="errorlogdialog.cpp" />
+    <ClCompile Include="ExtraDialogs.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExtraDialogs\ExtraDialogs.vcxproj">
-      <Project>{665b95fa-e175-4fad-8c69-f8aec3b0c532}</Project>
-    </ProjectReference>
+    <QtUic Include="errorlogdialog.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
