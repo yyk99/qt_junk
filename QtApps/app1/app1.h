@@ -11,6 +11,9 @@ public:
     app1(QWidget *parent = nullptr);
     ~app1();
 
+public Q_SLOTS:
+    void onFileConsole();
+
 private:
     Ui::app1Class ui;
 };
