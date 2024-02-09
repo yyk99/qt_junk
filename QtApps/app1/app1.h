@@ -14,6 +14,7 @@ public:
 public Q_SLOTS:
     void onFileConsole();
     void onViewErrorLog();
+    void onViewSimple_Dialog();
 
 private:
     Ui::app1Class ui;

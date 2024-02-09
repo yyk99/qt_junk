@@ -37,14 +37,23 @@
     <ClCompile Include="errorlogdialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="simpledialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="errorlogdialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="simpledialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="errorlogdialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="simpledialog.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

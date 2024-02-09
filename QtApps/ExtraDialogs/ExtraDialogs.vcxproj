@@ -91,6 +91,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="simpledialog.cpp" />
+    <QtMoc Include="simpledialog.h" />
     <QtMoc Include="errorlogdialog.h" />
     <ClInclude Include="extradialogs_global.h" />
     <QtMoc Include="ExtraDialogs.h" />
@@ -99,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="errorlogdialog.ui" />
+    <QtUic Include="simpledialog.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
