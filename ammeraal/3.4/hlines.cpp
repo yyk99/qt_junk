@@ -519,7 +519,7 @@ void HLines::paintEvent(QPaintEvent* event) {
         pnt.setPen(dashPen);
         for (int i = 0; i < polyList.size(); i++) {
             Polygon3D polygon = polyList[i];
-            int n = polygon.nrs.size();
+            int n = (int)polygon.nrs.size();
             for (int k = 0; k < n; k++) {
                 int from = abs(polygon.nrs[k]),
                     to = polygon.nrs[(k + 1) % n];
