@@ -9,6 +9,7 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
+class OnlineSourceSheet;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -20,5 +21,7 @@ public:
     void selectOnlineDialog();
 private:
     Ui::MainWindow *ui;
+
+    OnlineSourceSheet *onlineSourceSheet;
 };
 #endif // MAINWINDOW_H

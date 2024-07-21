@@ -43,8 +43,8 @@ else()
     else()
         add_executable(qc-proj1
             ${PROJECT_SOURCES}
-            selectonlinesource.ui
             onlinesourcesheet.h onlinesourcesheet.cpp
+            onlinesourcesheet.ui
         )
     endif()
 
