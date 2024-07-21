@@ -17,6 +17,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void selectOnlineDialog();
 private:
     Ui::MainWindow *ui;
 };
