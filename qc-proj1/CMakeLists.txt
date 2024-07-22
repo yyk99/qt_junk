@@ -45,6 +45,7 @@ else()
             ${PROJECT_SOURCES}
             onlinesourcesheet.h onlinesourcesheet.cpp
             onlinesourcesheet.ui
+            imagegriddialog.h imagegriddialog.cpp imagegriddialog.ui
         )
     endif()
 

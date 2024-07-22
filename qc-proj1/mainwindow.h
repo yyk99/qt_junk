@@ -19,6 +19,7 @@ public:
     ~MainWindow();
 
     void selectOnlineDialog();
+    void onImageGrid();
 private:
     Ui::MainWindow *ui;
 

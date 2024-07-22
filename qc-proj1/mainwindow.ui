@@ -2,14 +2,6 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>515</width>
-    <height>254</height>
-   </rect>
-  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -19,7 +11,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>515</width>
+     <width>551</width>
      <height>23</height>
     </rect>
    </property>
@@ -28,6 +20,7 @@
      <string>File</string>
     </property>
     <addaction name="actionSelect_Online_Source"/>
+    <addaction name="actionImage_Grid"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
@@ -42,6 +35,11 @@
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionImage_Grid">
+   <property name="text">
+    <string>Image Grid</string>
    </property>
   </action>
  </widget>
