@@ -6,6 +6,7 @@ OnlineSourceSheet::OnlineSourceSheet(QWidget *parent)
     , ui(new Ui::OnlineSourceSheet)
 {
     ui->setupUi(this);
+    setGeometry({0,0,800,600});
 }
 
 OnlineSourceSheet::~OnlineSourceSheet()
