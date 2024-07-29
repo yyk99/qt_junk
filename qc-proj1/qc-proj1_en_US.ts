@@ -2,6 +2,27 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <location filename="aboutdialog.ui" line="14"/>
+        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_aboutdialog.h" line="44"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="aboutdialog.ui" line="26"/>
+        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_aboutdialog.h" line="45"/>
+        <source>About...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="aboutdialog.ui" line="39"/>
+        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_aboutdialog.h" line="46"/>
+        <source>Qt Version will be here</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ImageGridDialog</name>
     <message>
         <location filename="imagegriddialog.ui" line="14"/>
@@ -14,32 +35,44 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="14"/>
-        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="72"/>
+        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="80"/>
         <source>MainWindow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="28"/>
-        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="76"/>
+        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="85"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="40"/>
-        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="73"/>
+        <location filename="mainwindow.ui" line="37"/>
+        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="86"/>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="47"/>
+        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="81"/>
         <source>Select Online Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="45"/>
-        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="74"/>
+        <location filename="mainwindow.ui" line="52"/>
+        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="82"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="50"/>
-        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="75"/>
+        <location filename="mainwindow.ui" line="57"/>
+        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="83"/>
         <source>Image Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="62"/>
+        <location filename="build-vs2022/qc-proj1_autogen/include_Debug/ui_mainwindow.h" line="84"/>
+        <source>About...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

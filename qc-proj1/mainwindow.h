@@ -20,6 +20,7 @@ public:
 
     void selectOnlineDialog();
     void onImageGrid();
+    void onAbout();
 private:
     Ui::MainWindow *ui;
 
