@@ -3,83 +3,77 @@
 //
 
 #include "html_renderer_q5.h"
+#include "renderdialogtoo.h"
+
 #include "../common/DebuggingConsole.h"
 
-#include <iostream>
-#include <QDebug>
-#include <QMessageBox>
 #include <QDate>
+#include <QDebug>
 #include <QFile>
-#include <QFileSelector>
 #include <QFileDialog>
-#include <QTextBrowser>
+#include <QFileSelector>
+#include <QMessageBox>
+#include <iostream>
 
-html_renderer_q5::html_renderer_q5(QWidget *parent)
-    : QMainWindow(parent)
-{
-    ui.setupUi(this);
+html_renderer_q5::html_renderer_q5(QWidget *parent) : QMainWindow(parent) {
+  ui.setupUi(this);
 
-    connect(ui.actionQuit, SIGNAL(triggered()), this, SLOT(on_quit()), Qt::QueuedConnection);
-    connect(ui.actionAbout_Qt, SIGNAL(triggered()), this, SLOT(on_about_qt()));
+  connect(ui.actionQuit, SIGNAL(triggered()), this, SLOT(on_quit()),
+          Qt::QueuedConnection);
+  connect(ui.actionAbout_Qt, SIGNAL(triggered()), this, SLOT(on_about_qt()));
 }
 
-html_renderer_q5::~html_renderer_q5()
-{}
+html_renderer_q5::~html_renderer_q5() {}
 
+void html_renderer_q5::on_quit() {
+  qDebug() << "about to on_quit...";
 
-void html_renderer_q5::on_quit()
-{
-    qDebug() << "about to on_quit...";
-
-    QCoreApplication::quit();
+  QCoreApplication::quit();
 }
 
-void
-html_renderer_q5::on_about_qt()
-{
-    CONSOLE( "Here..." );
+void html_renderer_q5::on_about_qt() {
+  CONSOLE("Here...");
 
-	qDebug() << "Date:" << QDate::currentDate();
-	qDebug() << "Types:" << QString("String") << QChar('x') << QRect(0, 10, 50, 40);
+  qDebug() << "Date:" << QDate::currentDate();
+  qDebug() << "Types:" << QString("String") << QChar('x')
+           << QRect(0, 10, 50, 40);
 
-	QMessageBox msgBox;
-    msgBox.setWindowTitle("About Qt");
+  QMessageBox msgBox;
+  msgBox.setWindowTitle("About Qt");
 
-    QString version = QString("QT Version: %1.%2 Patch %3").arg(QT_VERSION_MAJOR).arg(QT_VERSION_MINOR).arg(QT_VERSION_PATCH);
+  QString version = QString("QT Version: %1.%2 Patch %3")
+                        .arg(QT_VERSION_MAJOR)
+                        .arg(QT_VERSION_MINOR)
+                        .arg(QT_VERSION_PATCH);
 
-	msgBox.setText(version);
-	msgBox.exec();
+  msgBox.setText(version);
+  msgBox.exec();
 }
 
-void
-html_renderer_q5::on_actionRender_triggered()
-{
-    CONSOLE("START...");
+void html_renderer_q5::on_actionRender_triggered() {
+  CONSOLE("START...");
 
-	QFileDialog dialog(this);
-	dialog.setFileMode(QFileDialog::AnyFile);
+  QFileDialog dialog(this);
+  dialog.setFileMode(QFileDialog::AnyFile);
 
-#if 0
-	QStringList fileNames;
-	if (dialog.exec())
-		fileNames = dialog.selectedFiles();
-    CONSOLE("Selected: " << fileNames.size());
-#else
-	auto fileName = QFileDialog::getOpenFileName(this,
-		tr("Open HTML file"), ".", tr("HTML Files (*.htm *.html)"));
-	if (!fileName.isEmpty())
-	{
-		QFile f(fileName);
+  auto fileName = QFileDialog::getOpenFileName(this, tr("Open HTML file"), ".",
+                                               tr("HTML Files (*.htm *.html)"));
+  if (!fileName.isEmpty()) {
+    QFile f(fileName);
 
-		QString html_text = f.readAll();
+    if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
+      return;
 
-		QTextBrowser* tb = new QTextBrowser(this);
-		tb->setOpenExternalLinks(true);
-		tb->setHtml(html_text);
+    QByteArray bytes = f.readAll();
+    QString s = QString(bytes);
 
-		CONSOLE("Hm...");
-	}
-#endif
+    RenderDialogToo rnd;
 
-    CONSOLE("STOP...");
+    rnd.setText(s);
+    rnd.exec();
+
+    CONSOLE("Hm...");
+  }
+
+  CONSOLE("STOP...");
 }
