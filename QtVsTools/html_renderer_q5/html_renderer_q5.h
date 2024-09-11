@@ -14,6 +14,7 @@ public:
 public slots:
     void on_quit();
     void on_about_qt();
+    void on_actionRender_triggered();
 
 private:
     Ui::html_renderer_q5Class ui;

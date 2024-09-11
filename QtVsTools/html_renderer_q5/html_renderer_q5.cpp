@@ -8,14 +8,19 @@
 #include <iostream>
 #include <QDebug>
 #include <QMessageBox>
+#include <QDate>
+#include <QFile>
+#include <QFileSelector>
+#include <QFileDialog>
+#include <QTextBrowser>
 
 html_renderer_q5::html_renderer_q5(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
 
-    connect( ui.actionQuit, SIGNAL( triggered() ), this, SLOT( on_quit() ), Qt::QueuedConnection );
-    connect( ui.actionAbout_Qt, SIGNAL( triggered() ), this, SLOT( on_about_qt() ) );
+    connect(ui.actionQuit, SIGNAL(triggered()), this, SLOT(on_quit()), Qt::QueuedConnection);
+    connect(ui.actionAbout_Qt, SIGNAL(triggered()), this, SLOT(on_about_qt()));
 }
 
 html_renderer_q5::~html_renderer_q5()
@@ -34,6 +39,9 @@ html_renderer_q5::on_about_qt()
 {
     CONSOLE( "Here..." );
 
+	qDebug() << "Date:" << QDate::currentDate();
+	qDebug() << "Types:" << QString("String") << QChar('x') << QRect(0, 10, 50, 40);
+
 	QMessageBox msgBox;
     msgBox.setWindowTitle("About Qt");
 
@@ -41,4 +49,37 @@ html_renderer_q5::on_about_qt()
 
 	msgBox.setText(version);
 	msgBox.exec();
+}
+
+void
+html_renderer_q5::on_actionRender_triggered()
+{
+    CONSOLE("START...");
+
+	QFileDialog dialog(this);
+	dialog.setFileMode(QFileDialog::AnyFile);
+
+#if 0
+	QStringList fileNames;
+	if (dialog.exec())
+		fileNames = dialog.selectedFiles();
+    CONSOLE("Selected: " << fileNames.size());
+#else
+	auto fileName = QFileDialog::getOpenFileName(this,
+		tr("Open HTML file"), ".", tr("HTML Files (*.htm *.html)"));
+	if (!fileName.isEmpty())
+	{
+		QFile f(fileName);
+
+		QString html_text = f.readAll();
+
+		QTextBrowser* tb = new QTextBrowser(this);
+		tb->setOpenExternalLinks(true);
+		tb->setHtml(html_text);
+
+		CONSOLE("Hm...");
+	}
+#endif
+
+    CONSOLE("STOP...");
 }
