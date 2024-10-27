@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "qgraphicsscene": "cpp",
+        "qapplication": "cpp"
+    }
+}
