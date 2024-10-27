@@ -15,7 +15,8 @@ int main(int argc, char *argv[])
     QGraphicsPixmapItem *item = new QGraphicsPixmapItem(pixmap);
     scene.addItem(item);
 
-    QGraphicsView view(&scene);
+    QGraphicsView view{};
+    view.setScene(&scene);
     view.show();
 
     return a.exec();
