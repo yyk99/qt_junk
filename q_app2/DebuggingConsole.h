@@ -38,6 +38,9 @@ inline void attachDebugConsole()
     }
 #endif
 }
+#else
+
+inline void attachDebugConsole() {};
 
 #endif // WIN32
 
