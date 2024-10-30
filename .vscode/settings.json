@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "qtgui": "cpp",
+        "qtguidepends": "cpp"
+    }
+}
