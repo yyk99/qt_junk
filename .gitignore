@@ -2,3 +2,11 @@
 #
 #
 build-*/
+build/
+.vs/
+Debug/
+Release/
+x64/
+*.vcxproj.user
+*~
+CMakeLists.txt.user
