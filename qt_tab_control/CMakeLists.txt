@@ -48,6 +48,7 @@ else()
     else()
         add_executable(qt_tab_control
             ${PROJECT_SOURCES}
+            resources.qrc
         )
     endif()
 

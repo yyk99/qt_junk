@@ -44,9 +44,9 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="m_add_source">
        <property name="text">
-        <string>PushButton</string>
+        <string>Add Source</string>
        </property>
       </widget>
      </item>
