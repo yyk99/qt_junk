@@ -3,21 +3,11 @@
 
 #include <QWidget>
 
-namespace Ui {
-class RenderAreaToo;
-}
-
 class RenderAreaToo : public QWidget
 {
     Q_OBJECT
-
 public:
-    explicit RenderAreaToo(QWidget *parent = nullptr);
-    ~RenderAreaToo();
-
-
-private:
-    Ui::RenderAreaToo *ui;
+    RenderAreaToo();
 };
 
 #endif // RENDERAREATOO_H

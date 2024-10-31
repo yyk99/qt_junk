@@ -51,6 +51,7 @@ else()
     else()
         add_executable(q_app2
             ${PROJECT_SOURCES}
+            renderareatoo.h renderareatoo.cpp
         )
     endif()
 
