@@ -1,3 +1,7 @@
 <RCC>
-  <qresource prefix="icons"/>
+    <qresource prefix="/icons">
+        <file>images/boat1.webp</file>
+        <file>images/boat2.webp</file>
+        <file>images/boat3.webp</file>
+    </qresource>
 </RCC>

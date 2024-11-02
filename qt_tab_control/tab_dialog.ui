@@ -17,11 +17,11 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
-       <string>All Sources</string>
+       <string>All Sources (List view)</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
@@ -31,7 +31,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Favorite</string>
+       <string>Favorite (Table view)</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
