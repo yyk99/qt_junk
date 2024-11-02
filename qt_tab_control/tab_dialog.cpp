@@ -3,7 +3,7 @@
 //
 
 #include "tab_dialog.h"
-#include "./ui_tab_dialog.h"
+#include "ui_tab_dialog.h"
 
 #include <QDebug>
 
