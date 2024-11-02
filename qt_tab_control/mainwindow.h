@@ -17,9 +17,9 @@ public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
 
-  void exit();
-  void newDocument();
-  void openTabDialog();
+public slots:
+  void on_actionNew_triggered();
+  void on_actionOpen_Tab_Dialog_triggered();
   
 private:
     Ui::MainWindow *ui;

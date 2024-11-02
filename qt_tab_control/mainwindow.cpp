@@ -10,10 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    connect(ui->actionNew, &QAction::triggered, this, &MainWindow::newDocument);
-    connect(ui->actionQuit, &QAction::triggered, this, &MainWindow::exit);
-    connect(ui->actionOpen_Tab_Dialog, &QAction::triggered, this, &MainWindow::openTabDialog);
 }
 
 MainWindow::~MainWindow()
@@ -21,17 +17,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::exit()
+void MainWindow::on_actionNew_triggered()
 {
-    QCoreApplication::quit();
+    qDebug() << "newDocument";
 }
 
-void MainWindow::newDocument()
-{
-    //QCoreApplication::quit();
-}
-
-void MainWindow::openTabDialog()
+void MainWindow::on_actionOpen_Tab_Dialog_triggered()
 {
   qDebug() << "open tab dialog";
   TabDialog dialog{};
