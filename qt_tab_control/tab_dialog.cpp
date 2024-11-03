@@ -69,6 +69,15 @@ TabDialog::on_add_source_btn_clicked()
             auto data = model->stringList();
             data.append("One more");
             model->setStringList(data);
-        };
+        }
+    } else if (auto lst = tab->findChild<QTableView *>("tableView"))
+    {
+        qDebug() << "Found table!";
+        if(auto model = dynamic_cast<QStringListModel*>(lst->model()))
+        {
+            auto data = model->stringList();
+            data.append("One more row");
+            model->setStringList(data);
+        }
     }
 }
