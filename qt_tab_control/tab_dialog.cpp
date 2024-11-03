@@ -7,20 +7,34 @@
 
 #include <QDebug>
 #include <QStringListModel>
+#include <QStandardItemModel>
 
 TabDialog::TabDialog(QDialog *parent)
     : QDialog(parent)
     , ui(new Ui::TabDialog)
 {
     ui->setupUi(this);
+    ui->tabWidget->setCurrentIndex(0);
 
     qDebug() << "m_tabWidget.count" << ui->tabWidget->count();
 
     {
+#if 0
         QStringListModel *model = new QStringListModel();
         QStringList list;
         list << "a" << "b" << "c";
         model->setStringList(list);
+#else
+        auto model = new QStandardItemModel(this);
+        ui->listView->setModel(model);
+        {
+            QIcon icon(":/icons/images/boat1.png");
+            QPixmap pixmap = icon.pixmap(QSize(64, 64));
+            model->appendRow(new QStandardItem(QIcon(pixmap), "boat1.png"));
+        }
+        model->appendRow(new QStandardItem(QPixmap(":/icons/images/boat2.png"), "boat2.png"));
+        model->appendRow(new QStandardItem(QPixmap(":/icons/images/boat3.png"), "boat3.png"));
+#endif
 
         // Setup first tab model
         if (auto lst = ui->tabWidget->widget(0)->findChild<QListView *>("listView"))
@@ -38,6 +52,34 @@ TabDialog::TabDialog(QDialog *parent)
         {
             lst->setModel(model);
         }
+    }
+    {
+        // setup Page 3
+        if (auto lst = ui->tab_3->findChild<QListWidget *>("listWidget"))
+        {
+            {
+                QPixmap pixmap(":/icons/images/boat1.png");
+                QListWidgetItem* item = new QListWidgetItem(pixmap, "boat1");
+                item->setData(Qt::DecorationRole, pixmap);
+                lst->addItem(item);
+            }
+            {
+                QPixmap pixmap(":/icons/images/boat2.png");
+                QListWidgetItem* item = new QListWidgetItem(pixmap, "boat2");
+                item->setData(Qt::DecorationRole, pixmap);
+                lst->addItem(item);
+            }
+            {
+                QPixmap pixmap(":/icons/images/boat3.png");
+                QListWidgetItem* item = new QListWidgetItem(pixmap, "boat3");
+                item->setData(Qt::DecorationRole, pixmap);
+                lst->addItem(item);
+            }
+        }
+    }
+    {
+        auto pixmap = QPixmap(":/icons/images/boat1.png");
+        qDebug() << pixmap.size();
     }
 }
 
