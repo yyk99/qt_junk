@@ -22,12 +22,6 @@ TabDialog::TabDialog(QDialog *parent)
     qDebug() << "m_tabWidget.count" << ui->tabWidget->count();
 
     {
-#if 0
-        QStringListModel *model = new QStringListModel();
-        QStringList list;
-        list << "a" << "b" << "c";
-        model->setStringList(list);
-#else
         auto model = new QStandardItemModel(this);
         ui->listView->setModel(model);
         {
@@ -37,7 +31,6 @@ TabDialog::TabDialog(QDialog *parent)
         }
         model->appendRow(new QStandardItem(QPixmap(":/icons/images/boat2.png"), "boat2.png"));
         model->appendRow(new QStandardItem(QPixmap(":/icons/images/boat3.png"), "boat3.png"));
-#endif
 
         // Setup first tab model
         if (auto lst = ui->tabWidget->widget(0)->findChild<QListView *>("listView"))
@@ -60,6 +53,9 @@ TabDialog::TabDialog(QDialog *parent)
         // setup Page 3
         if (auto lst = ui->tab_3->findChild<QListWidget *>())
         {
+            // See https://stackoverflow.com/questions/56617364/how-to-set-icon-at-left-of-text-in-a-qlistwidgetitem
+            // Set label under the icons
+            lst->setViewMode(QListView::IconMode);
             {
                 QPixmap pixmap(":/icons/images/boat1.png");
                 QListWidgetItem* item = new QListWidgetItem(pixmap, "boat1");
@@ -103,6 +99,7 @@ TabDialog::on_add_source_btn_clicked()
     QWidget *tab = ui->tabWidget->currentWidget();
     if (auto lst = tab->findChild<QListWidget *>())
     {
+        lst->setViewMode(QListView::IconMode);
         QString fileName = QFileDialog::getOpenFileName(
             this,
             tr("Open Image"), ".", tr("Image Files (*.png *.jpg *.bmp)")
