@@ -123,3 +123,19 @@ TabDialog::on_add_source_btn_clicked()
         }
     }
 }
+
+void
+TabDialog::on_add_tab_btn_clicked()
+{
+    qDebug() << "void on_add_tab_btn_clicked()";
+    {
+        auto tab_1 = new QWidget();
+        tab_1->setObjectName(QString::fromUtf8("tab_1"));
+        auto horizontalLayout = new QHBoxLayout(tab_1);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        auto listWidget = new QListWidget(tab_1);
+        listWidget->setObjectName(QString::fromUtf8("listWidget"));
+        horizontalLayout->addWidget(listWidget);
+        ui->tabWidget->addTab(tab_1, QString("One more tab"));
+    }
+}
