@@ -8,6 +8,9 @@
 #include <QDebug>
 #include <QStringListModel>
 #include <QStandardItemModel>
+#include <QFileDialog>
+#include <QErrorMessage>
+#include <QMessageBox>
 
 TabDialog::TabDialog(QDialog *parent)
     : QDialog(parent)
@@ -55,7 +58,7 @@ TabDialog::TabDialog(QDialog *parent)
     }
     {
         // setup Page 3
-        if (auto lst = ui->tab_3->findChild<QListWidget *>("listWidget"))
+        if (auto lst = ui->tab_3->findChild<QListWidget *>())
         {
             {
                 QPixmap pixmap(":/icons/images/boat1.png");
@@ -77,10 +80,6 @@ TabDialog::TabDialog(QDialog *parent)
             }
         }
     }
-    {
-        auto pixmap = QPixmap(":/icons/images/boat1.png");
-        qDebug() << pixmap.size();
-    }
 }
 
 TabDialog::~TabDialog()
@@ -101,26 +100,25 @@ TabDialog::on_connect_btn_clicked()
 void
 TabDialog::on_add_source_btn_clicked()
 {
-    qDebug() << "on_add_source_btn_clicked...";
     QWidget *tab = ui->tabWidget->currentWidget();
-    if (auto lst  = tab->findChild<QListView *>("listView"))
+    if (auto lst = tab->findChild<QListWidget *>())
     {
-        qDebug() << "Found!";
-        if(auto model = dynamic_cast<QStringListModel*>(lst->model()))
+        QString fileName = QFileDialog::getOpenFileName(
+            this,
+            tr("Open Image"), ".", tr("Image Files (*.png *.jpg *.bmp)")
+            );
+        if (fileName.length())
         {
-            auto data = model->stringList();
-            data.append("One more");
-            model->setStringList(data);
+            QPixmap pixmap(fileName);
+            QListWidgetItem* item = new QListWidgetItem(pixmap, fileName);
+            item->setData(Qt::DecorationRole, pixmap);
+            lst->addItem(item);
         }
-    } else if (auto lst = tab->findChild<QTableView *>("tableView"))
-    {
-        qDebug() << "Found table!";
-        if(auto model = dynamic_cast<QStringListModel*>(lst->model()))
-        {
-            auto data = model->stringList();
-            data.append("One more row");
-            model->setStringList(data);
-        }
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText(tr("Cannot find QListWidget"));
+        msgBox.setWindowTitle(tr("Cannot..."));
+        msgBox.exec();
     }
 }
 
