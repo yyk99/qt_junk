@@ -131,6 +131,8 @@ TabDialog::on_add_tab_btn_clicked()
         auto listWidget = new QListWidget(tab_1);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
         horizontalLayout->addWidget(listWidget);
-        ui->tabWidget->addTab(tab_1, QString("One more tab"));
+        int pos = ui->tabWidget->addTab(tab_1, QString("One more tab"));
+        // select the just added tab
+        ui->tabWidget->setCurrentIndex(pos);
     }
 }
