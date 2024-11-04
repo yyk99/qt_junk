@@ -58,19 +58,19 @@ TabDialog::TabDialog(QDialog *parent)
             lst->setViewMode(QListView::IconMode);
             {
                 QPixmap pixmap(":/icons/images/boat1.png");
-                QListWidgetItem* item = new QListWidgetItem(pixmap, "boat1");
+                QListWidgetItem* item = new QListWidgetItem(pixmap.scaled(64, 64), "boat1");
                 item->setData(Qt::DecorationRole, pixmap);
                 lst->addItem(item);
             }
             {
                 QPixmap pixmap(":/icons/images/boat2.png");
-                QListWidgetItem* item = new QListWidgetItem(pixmap, "boat2");
+                QListWidgetItem* item = new QListWidgetItem(pixmap.scaled(64, 64), "boat2");
                 item->setData(Qt::DecorationRole, pixmap);
                 lst->addItem(item);
             }
             {
                 QPixmap pixmap(":/icons/images/boat3.png");
-                QListWidgetItem* item = new QListWidgetItem(pixmap, "boat3");
+                QListWidgetItem* item = new QListWidgetItem(pixmap.scaled(64, 64), "boat3");
                 item->setData(Qt::DecorationRole, pixmap);
                 lst->addItem(item);
             }
