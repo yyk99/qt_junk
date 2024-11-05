@@ -21,17 +21,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::exit()
+void MainWindow::on_actionNew_triggered()
 {
-    QCoreApplication::quit();
+    qDebug() << "newDocument";
 }
 
-void MainWindow::newDocument()
-{
-    //QCoreApplication::quit();
-}
-
-void MainWindow::openTabDialog()
+void MainWindow::on_actionOpen_Tab_Dialog_triggered()
 {
   qDebug() << "open tab dialog";
   TabDialog dialog{};

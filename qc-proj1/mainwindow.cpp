@@ -13,6 +13,19 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    {
+        auto g = this->geometry();
+        qDebug() << "the geometry" << g;
+    }
+    setGeometry({0,0,800,600});
+    {
+        auto g = this->geometry();
+        qDebug() << "the geometry updated" << g;
+    }
+
+    {
+
+    }
     connect(ui->actionSelect_Online_Source, &QAction::triggered, this, &MainWindow::selectOnlineDialog);
     connect(ui->actionImage_Grid, &QAction::triggered, this, &MainWindow::onImageGrid);
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::onAbout);
