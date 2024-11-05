@@ -11,6 +11,7 @@
 #include <QFileDialog>
 #include <QErrorMessage>
 #include <QMessageBox>
+#include <QFileInfo>
 
 TabDialog::TabDialog(QDialog *parent)
     : QDialog(parent)
@@ -56,22 +57,14 @@ TabDialog::TabDialog(QDialog *parent)
             // See https://stackoverflow.com/questions/56617364/how-to-set-icon-at-left-of-text-in-a-qlistwidgetitem
             // Set label under the icons
             lst->setViewMode(QListView::IconMode);
+            int w = 400, h = 400;
+            for (auto s : {"/icons/images/boat1.png", "/icons/images/boat2.png", "/icons/images/boat3.png"})
             {
-                QPixmap pixmap(":/icons/images/boat1.png");
-                QListWidgetItem* item = new QListWidgetItem(pixmap.scaled(64, 64), "boat1");
-                item->setData(Qt::DecorationRole, pixmap);
-                lst->addItem(item);
-            }
-            {
-                QPixmap pixmap(":/icons/images/boat2.png");
-                QListWidgetItem* item = new QListWidgetItem(pixmap.scaled(64, 64), "boat2");
-                item->setData(Qt::DecorationRole, pixmap);
-                lst->addItem(item);
-            }
-            {
-                QPixmap pixmap(":/icons/images/boat3.png");
-                QListWidgetItem* item = new QListWidgetItem(pixmap.scaled(64, 64), "boat3");
-                item->setData(Qt::DecorationRole, pixmap);
+                auto d = QFileInfo(s);
+                QPixmap pixmap(QString(":") + s);
+                qDebug() << pixmap.size();
+                QListWidgetItem* item = new QListWidgetItem(d.fileName());
+                item->setData(Qt::DecorationRole, pixmap.scaled(w, h));
                 lst->addItem(item);
             }
         }
