@@ -69,6 +69,12 @@ TabDialog::TabDialog(QDialog *parent)
             }
         }
     }
+    {        
+        ui->treeWidget->setColumnCount(1);
+        QList<QTreeWidgetItem *> items;
+        items.append(new QTreeWidgetItem(static_cast<QTreeWidget *>(nullptr), QStringList({"one", "two", "three"})));
+        ui->treeWidget->insertTopLevelItems(0, items);
+    }
 }
 
 TabDialog::~TabDialog()

@@ -49,7 +49,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab">
+     <widget class="QWidget" name="tab_4">
       <attribute name="title">
        <string>Tree</string>
       </attribute>
