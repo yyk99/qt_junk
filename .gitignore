@@ -8,5 +8,6 @@ Debug/
 Release/
 x64/
 *.vcxproj.user
+*.pro.user
 *~
 CMakeLists.txt.user
