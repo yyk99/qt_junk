@@ -24,12 +24,24 @@ TabDialog::TabDialog(QDialog *parent)
     ui->horizontalLayout_top->addWidget(menubar);
 
     {
-      QMenu* fileMenu = menubar->addMenu("&More actions");
+        QMenu* fileMenu = menubar->addMenu("&More actions");
 
-      auto actionNew = new QAction(this);
-      actionNew->setObjectName(QString::fromUtf8("actionNew"));
-      actionNew->setText("New Action...");
-      fileMenu->addAction(actionNew);
+        {
+            auto actionNew = new QAction(this);
+            actionNew->setObjectName(QString::fromUtf8("actionNew"));
+            actionNew->setText("New Action...");
+            fileMenu->addAction(actionNew);
+            auto ok = connect(actionNew, SIGNAL(triggered()), this, SLOT(on_actionNew_triggered()));
+            qDebug() << "ok =" << ok;
+        }
+        {
+            auto action = new QAction(this);
+            action->setObjectName(QString::fromUtf8("actionClose"));
+            action->setText("Close Dialog");
+            fileMenu->addAction(action);
+            auto ok = connect(action, SIGNAL(triggered()), this, SLOT(close()));
+            qDebug() << "ok =" << ok;
+        }
     }
 
     ui->tabWidget->setCurrentIndex(0);
@@ -148,4 +160,10 @@ TabDialog::on_add_tab_btn_clicked()
         // select the just added tab
         ui->tabWidget->setCurrentIndex(pos);
     }
+}
+
+void
+TabDialog::on_actionNew_triggered()
+{
+   qDebug() << "void on_actionNew_triggered()"; 
 }
