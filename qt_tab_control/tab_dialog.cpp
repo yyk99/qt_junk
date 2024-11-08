@@ -12,12 +12,26 @@
 #include <QErrorMessage>
 #include <QMessageBox>
 #include <QFileInfo>
+#include <QMenuBar>
 
 TabDialog::TabDialog(QDialog *parent)
     : QDialog(parent)
     , ui(new Ui::TabDialog)
 {
     ui->setupUi(this);
+
+    QMenuBar* menubar = new QMenuBar(this);
+    ui->horizontalLayout_top->addWidget(menubar);
+
+    {
+      QMenu* fileMenu = menubar->addMenu("&More actions");
+
+      auto actionNew = new QAction(this);
+      actionNew->setObjectName(QString::fromUtf8("actionNew"));
+      actionNew->setText("New Action...");
+      fileMenu->addAction(actionNew);
+    }
+
     ui->tabWidget->setCurrentIndex(0);
 
     qDebug() << "m_tabWidget.count" << ui->tabWidget->count();
