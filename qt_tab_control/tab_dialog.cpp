@@ -37,7 +37,7 @@ TabDialog::TabDialog(QDialog *parent)
         {
             auto action = new QAction(this);
             action->setObjectName(QString::fromUtf8("actionClose"));
-            action->setText("Close Dialog");
+            action->setText("Close");
             fileMenu->addAction(action);
             auto ok = connect(action, SIGNAL(triggered()), this, SLOT(close()));
             qDebug() << "ok =" << ok;
