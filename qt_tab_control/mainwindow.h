@@ -20,6 +20,7 @@ public:
 public slots:
   void on_actionNew_triggered();
   void on_actionOpen_Tab_Dialog_triggered();
+  void on_actionOpen_Tab_Too_Dialog_triggered();
   
 private:
     Ui::MainWindow *ui;

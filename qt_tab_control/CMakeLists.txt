@@ -49,6 +49,7 @@ else()
         add_executable(qt_tab_control
             ${PROJECT_SOURCES}
             resources.qrc
+            tabdialogtoo.h tabdialogtoo.cpp tabdialogtoo.ui
         )
     endif()
 
