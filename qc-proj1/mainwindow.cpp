@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 #include "onlinesourcesheet.h"
 #include "imagegriddialog.h"
+#include "aboutdialog.h"
 
 #include <QDebug>
 
@@ -27,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
     connect(ui->actionSelect_Online_Source, &QAction::triggered, this, &MainWindow::selectOnlineDialog);
     connect(ui->actionImage_Grid, &QAction::triggered, this, &MainWindow::onImageGrid);
+    connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::onAbout);
 }
 
 MainWindow::~MainWindow()
@@ -57,5 +59,11 @@ void MainWindow::selectOnlineDialog()
 void MainWindow::onImageGrid()
 {
     ImageGridDialog dlg{};
+    dlg.exec();
+}
+
+void MainWindow::onAbout()
+{
+    AboutDialog dlg{};
     dlg.exec();
 }

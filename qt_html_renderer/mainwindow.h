@@ -9,7 +9,6 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
-class OnlineSourceSheet;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -18,12 +17,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void selectOnlineDialog();
-    void onImageGrid();
-    void onAbout();
+public slots:
+    void on_actionOpen_Renderer_triggered();
+
 private:
     Ui::MainWindow *ui;
-
-    OnlineSourceSheet *onlineSourceSheet;
 };
 #endif // MAINWINDOW_H

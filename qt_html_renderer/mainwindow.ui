@@ -6,18 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>621</width>
-    <height>397</height>
+    <width>634</width>
+    <height>581</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>621</width>
-    <height>397</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string>Main Window ...</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -25,47 +19,29 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>621</width>
-     <height>23</height>
+     <width>634</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionSelect_Online_Source"/>
-    <addaction name="actionImage_Grid"/>
+    <addaction name="actionOpen_Renderer"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="title">
-     <string>Help</string>
-    </property>
-    <addaction name="actionAbout"/>
-   </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionSelect_Online_Source">
+  <action name="actionOpen_Renderer">
    <property name="text">
-    <string>Select Online Source</string>
+    <string>Open Renderer</string>
    </property>
   </action>
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
-   </property>
-  </action>
-  <action name="actionImage_Grid">
-   <property name="text">
-    <string>Image Grid</string>
-   </property>
-  </action>
-  <action name="actionAbout">
-   <property name="text">
-    <string>About...</string>
    </property>
   </action>
  </widget>
@@ -82,8 +58,8 @@
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>257</x>
-     <y>299</y>
+     <x>316</x>
+     <y>290</y>
     </hint>
    </hints>
   </connection>
