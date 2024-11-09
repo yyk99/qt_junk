@@ -23,6 +23,8 @@ public slots:
     void on_add_source_btn_clicked();
     void on_add_tab_btn_clicked();
 
+    void on_actionNew_triggered();
+
 private:
     Ui::TabDialog *ui;
 };

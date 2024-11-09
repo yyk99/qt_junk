@@ -12,12 +12,38 @@
 #include <QErrorMessage>
 #include <QMessageBox>
 #include <QFileInfo>
+#include <QMenuBar>
 
 TabDialog::TabDialog(QDialog *parent)
     : QDialog(parent)
     , ui(new Ui::TabDialog)
 {
     ui->setupUi(this);
+
+    QMenuBar* menubar = new QMenuBar(this);
+    ui->horizontalLayout_top->addWidget(menubar);
+
+    {
+        QMenu* fileMenu = menubar->addMenu("&More actions");
+
+        {
+            auto actionNew = new QAction(this);
+            actionNew->setObjectName(QString::fromUtf8("actionNew"));
+            actionNew->setText("New Action...");
+            fileMenu->addAction(actionNew);
+            auto ok = connect(actionNew, SIGNAL(triggered()), this, SLOT(on_actionNew_triggered()));
+            qDebug() << "ok =" << ok;
+        }
+        {
+            auto action = new QAction(this);
+            action->setObjectName(QString::fromUtf8("actionClose"));
+            action->setText("Close");
+            fileMenu->addAction(action);
+            auto ok = connect(action, SIGNAL(triggered()), this, SLOT(close()));
+            qDebug() << "ok =" << ok;
+        }
+    }
+
     ui->tabWidget->setCurrentIndex(0);
 
     qDebug() << "m_tabWidget.count" << ui->tabWidget->count();
@@ -68,6 +94,12 @@ TabDialog::TabDialog(QDialog *parent)
                 lst->addItem(item);
             }
         }
+    }
+    {        
+        ui->treeWidget->setColumnCount(1);
+        QList<QTreeWidgetItem *> items;
+        items.append(new QTreeWidgetItem(static_cast<QTreeWidget *>(nullptr), QStringList({"one", "two", "three"})));
+        ui->treeWidget->insertTopLevelItems(0, items);
     }
 }
 
@@ -128,4 +160,10 @@ TabDialog::on_add_tab_btn_clicked()
         // select the just added tab
         ui->tabWidget->setCurrentIndex(pos);
     }
+}
+
+void
+TabDialog::on_actionNew_triggered()
+{
+   qDebug() << "void on_actionNew_triggered()"; 
 }
