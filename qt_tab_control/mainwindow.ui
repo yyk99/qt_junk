@@ -6,23 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>486</width>
-    <height>289</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout"/>
-  </widget>
+  <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>486</width>
-     <height>23</height>
+     <width>800</width>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -31,6 +29,7 @@
     </property>
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
+    <addaction name="actionOpen_Tab_Dialog"/>
     <addaction name="actionSave"/>
     <addaction name="actionSave_As"/>
     <addaction name="separator"/>
@@ -77,6 +76,11 @@
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionOpen_Tab_Dialog">
+   <property name="text">
+    <string>Open Tab Dialog</string>
    </property>
   </action>
  </widget>
