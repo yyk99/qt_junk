@@ -6,7 +6,9 @@
 class OnlineSourcesModel : public TreeModel
 {
   Q_OBJECT
+#if !_WIN32
   typedef TreeModel __super;
+#endif
 public:
   explicit OnlineSourcesModel (const QString &data, QObject *parent = nullptr);
 

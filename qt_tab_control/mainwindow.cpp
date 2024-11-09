@@ -12,10 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    connect(ui->actionNew, &QAction::triggered, this, &MainWindow::newDocument);
-    connect(ui->actionQuit, &QAction::triggered, this, &MainWindow::exit);
-    connect(ui->actionOpen_Tab_Dialog, &QAction::triggered, this, &MainWindow::openTabDialog);
 }
 
 MainWindow::~MainWindow()
