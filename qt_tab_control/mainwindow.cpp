@@ -5,6 +5,7 @@
 #include "tabdialogtoo.h"
 
 #include <QDebug>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -35,4 +36,14 @@ void MainWindow::on_actionOpen_Tab_Too_Dialog_triggered()
   qDebug() << __func__ ;
   TabDialogtoo dlg{};
   dlg.exec();
+}
+
+void MainWindow::on_actionAbout_triggered()
+{
+  QMessageBox::about(this, "About this application", tr("<p>Demo application</p><p>Version: 0.1</p>"));
+}
+
+void MainWindow::on_actionAbout_Qt_triggered()
+{
+  QMessageBox::aboutQt(this, "About Qt");
 }

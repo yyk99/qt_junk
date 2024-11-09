@@ -7,6 +7,7 @@ TabDialogtoo::TabDialogtoo (QDialog *parent)
     : QDialog (parent), ui (new Ui::TabDialogtoo)
 {
   ui->setupUi (this);
+  setWindowTitle("Super Pooper");
 }
 
 TabDialogtoo::~TabDialogtoo () { delete ui; }

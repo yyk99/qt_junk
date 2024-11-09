@@ -41,6 +41,7 @@
      <string>Help</string>
     </property>
     <addaction name="actionAbout"/>
+    <addaction name="actionAbout_Qt"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuHelp"/>
@@ -87,6 +88,11 @@
   <action name="actionOpen_Tab_Too_Dialog">
    <property name="text">
     <string>Open Tab Too Dialog</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="text">
+    <string>About Qt</string>
    </property>
   </action>
  </widget>
