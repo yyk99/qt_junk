@@ -5,6 +5,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="14"/>
+        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_mainwindow.h" line="106"/>
         <source>MainWindow</source>
         <translation type="unfinished"></translation>
     </message>
@@ -51,6 +52,15 @@
     <message>
         <location filename="mainwindow.ui" line="77"/>
         <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RenderAreaToo</name>
+    <message>
+        <location filename="renderareatoo.ui" line="14"/>
+        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_renderareatoo.h" line="35"/>
+        <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
