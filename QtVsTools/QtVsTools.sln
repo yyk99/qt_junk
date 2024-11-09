@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AAA_Readme", "AAA_Readme", 
 		README.txt = README.txt
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "html_renderer_q5", "html_renderer_q5\html_renderer_q5.vcxproj", "{55A2264F-EACD-46D4-92C8-E599823EF642}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -26,6 +28,10 @@ Global
 		{665B95FA-E175-4FAD-8C69-F8AEC3B0C532}.Debug|x64.Build.0 = Debug|x64
 		{665B95FA-E175-4FAD-8C69-F8AEC3B0C532}.Release|x64.ActiveCfg = Release|x64
 		{665B95FA-E175-4FAD-8C69-F8AEC3B0C532}.Release|x64.Build.0 = Release|x64
+		{55A2264F-EACD-46D4-92C8-E599823EF642}.Debug|x64.ActiveCfg = Debug|x64
+		{55A2264F-EACD-46D4-92C8-E599823EF642}.Debug|x64.Build.0 = Debug|x64
+		{55A2264F-EACD-46D4-92C8-E599823EF642}.Release|x64.ActiveCfg = Release|x64
+		{55A2264F-EACD-46D4-92C8-E599823EF642}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
