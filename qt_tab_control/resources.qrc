@@ -4,4 +4,7 @@
         <file>images/boat2.png</file>
         <file>images/boat3.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>default.txt</file>
+    </qresource>
 </RCC>

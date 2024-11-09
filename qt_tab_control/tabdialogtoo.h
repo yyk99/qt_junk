@@ -2,6 +2,7 @@
 #define TABDIALOGTOO_H
 
 #include <QDialog>
+#include <QAbstractItemModel>
 
 namespace Ui
 {
@@ -21,6 +22,7 @@ public slots:
 
 private:
   Ui::TabDialogtoo *ui;
+  QAbstractItemModel *model;
 };
 
 #endif // TABDIALOGTOO_H
