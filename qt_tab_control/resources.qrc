@@ -6,5 +6,6 @@
     </qresource>
     <qresource prefix="/">
         <file>default.txt</file>
+        <file>2lines.txt</file>
     </qresource>
 </RCC>

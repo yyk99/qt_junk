@@ -47,7 +47,6 @@ TabDialogtoo::TabDialogtoo (QDialog *parent)
 #else
     QFile file(":/default.txt");
     file.open(QIODevice::ReadOnly);
-
     QString s = file.readAll();
     qDebug() << s;
     file.close();
