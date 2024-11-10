@@ -9,11 +9,11 @@
 
 int main(int argc, char *argv[]) {
 #if _DEBUG
-  attachDebugConsole();
+    attachDebugConsole();
 #endif
 
-  QApplication a(argc, argv);
-  html_renderer_q5 w;
-  w.show();
-  return a.exec();
+    QApplication a(argc, argv);
+    html_renderer_q5 w;
+    w.show();
+    return a.exec();
 }
