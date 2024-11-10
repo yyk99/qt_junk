@@ -16,7 +16,7 @@
 #include <iostream>
 
 html_renderer_q5::html_renderer_q5(QWidget *parent) : QMainWindow(parent) {
-  ui.setupUi(this);
+    ui.setupUi(this);
 
   connect(ui.actionQuit, SIGNAL(triggered()), this, SLOT(on_quit()),
           Qt::QueuedConnection);
@@ -26,9 +26,9 @@ html_renderer_q5::html_renderer_q5(QWidget *parent) : QMainWindow(parent) {
 html_renderer_q5::~html_renderer_q5() {}
 
 void html_renderer_q5::on_quit() {
-  qDebug() << "about to on_quit...";
+    qDebug() << "about to on_quit...";
 
-  QCoreApplication::quit();
+    QCoreApplication::quit();
 }
 
 void html_renderer_q5::on_about_qt() {
