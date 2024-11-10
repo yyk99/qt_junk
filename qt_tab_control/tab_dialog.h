@@ -17,6 +17,14 @@ public:
     TabDialog(QDialog *parent = nullptr);
     ~TabDialog();
 
+public slots:
+    // void on_<object name>_<signal name>(<signal parameters>);
+    void on_connect_btn_clicked();
+    void on_add_source_btn_clicked();
+    void on_add_tab_btn_clicked();
+
+    void on_actionNew_triggered();
+
 private:
     Ui::TabDialog *ui;
 };

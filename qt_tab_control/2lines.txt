@@ -1,0 +1,2 @@
+Getting Started				How to familiarize yourself with Qt Designer
+    Launching Designer			Running the Qt Designer application

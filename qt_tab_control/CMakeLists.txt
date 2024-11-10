@@ -48,13 +48,28 @@ else()
     else()
         add_executable(qt_tab_control
             ${PROJECT_SOURCES}
+            resources.qrc
+            tabdialogtoo.h tabdialogtoo.cpp tabdialogtoo.ui
+            onlinesourcesmodel.h onlinesourcesmodel.cpp
+        )
+        add_library(treemodel STATIC
+            ../simpletreemodel/treeitem.cpp
+            ../simpletreemodel/treeitem.h
+            ../simpletreemodel/treemodel.cpp
+            ../simpletreemodel/treemodel.h
         )
     endif()
 
 #    qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
 
-target_link_libraries(qt_tab_control PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(treemodel PRIVATE
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Widgets)
+
+target_link_libraries(qt_tab_control PRIVATE
+    treemodel
+    Qt${QT_VERSION_MAJOR}::Widgets)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
