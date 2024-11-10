@@ -15,7 +15,7 @@ CMakeLists.txt.user
 # Edit at https://www.gitignore.io/?templates=visualstudiocode
 
 ### VisualStudioCode ###
-.vscode/**/* instead - see comments
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json

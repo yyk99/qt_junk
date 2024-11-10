@@ -21,8 +21,7 @@
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
-            ],
-            "visualizerFile": "/home/yyk/.config/Code/User/workspaceStorage/37361593481a0b0c9a704bd4518f33f2/tonka3000.qtvsctools/qt.natvis.xml"
+            ]
         },
         {
             "name": "(gdb) Launch",
@@ -46,8 +45,7 @@
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
-            ],
-            "visualizerFile": "/home/yyk/.config/Code/User/workspaceStorage/37361593481a0b0c9a704bd4518f33f2/tonka3000.qtvsctools/qt.natvis.xml"
+            ]
         }
     ]
 }

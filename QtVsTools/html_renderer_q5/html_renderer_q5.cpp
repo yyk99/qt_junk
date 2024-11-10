@@ -14,7 +14,6 @@
 #include <QFileSelector>
 #include <QMessageBox>
 #include <iostream>
-#include <qdebug>
 
 html_renderer_q5::html_renderer_q5(QWidget *parent) : QMainWindow(parent) {
     ui.setupUi(this);
