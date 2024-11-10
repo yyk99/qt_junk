@@ -5,61 +5,51 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="14"/>
-        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_mainwindow.h" line="106"/>
         <source>MainWindow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="57"/>
-        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_mainwindow.h" line="116"/>
+        <location filename="mainwindow.ui" line="30"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="68"/>
-        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_mainwindow.h" line="117"/>
+        <location filename="mainwindow.ui" line="41"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="78"/>
-        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_mainwindow.h" line="107"/>
+        <location filename="mainwindow.ui" line="51"/>
         <source>New</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="81"/>
-        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_mainwindow.h" line="109"/>
+        <location filename="mainwindow.ui" line="54"/>
         <source>New window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="86"/>
-        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_mainwindow.h" line="111"/>
+        <location filename="mainwindow.ui" line="59"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="91"/>
-        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_mainwindow.h" line="112"/>
+        <location filename="mainwindow.ui" line="64"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="96"/>
-        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_mainwindow.h" line="113"/>
+        <location filename="mainwindow.ui" line="69"/>
         <source>Save As</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="101"/>
-        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_mainwindow.h" line="114"/>
+        <location filename="mainwindow.ui" line="74"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="106"/>
-        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_mainwindow.h" line="115"/>
+        <location filename="mainwindow.ui" line="79"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
@@ -68,7 +58,6 @@
     <name>RenderAreaToo</name>
     <message>
         <location filename="renderareatoo.ui" line="14"/>
-        <location filename="build-vs2022-x64/q_app2_autogen/include_Debug/ui_renderareatoo.h" line="35"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>

@@ -46,6 +46,7 @@ else()
             onlinesourcesheet.h onlinesourcesheet.cpp
             onlinesourcesheet.ui
             imagegriddialog.h imagegriddialog.cpp imagegriddialog.ui
+            aboutdialog.cpp aboutdialog.h aboutdialog.ui
         )
     endif()
 

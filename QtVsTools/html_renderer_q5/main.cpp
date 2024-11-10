@@ -7,8 +7,7 @@
 
 #include <QtWidgets/QApplication>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
 #if _DEBUG
     attachDebugConsole();
 #endif
