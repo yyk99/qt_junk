@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "Linux-arm64",
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/include/aarch64-linux-gnu/qt5",
