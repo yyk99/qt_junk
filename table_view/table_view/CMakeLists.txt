@@ -23,7 +23,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(table_view
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        tableview.h tableview.cpp
+        tablemodel.h tablemodel.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET table_view APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

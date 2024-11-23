@@ -1,13 +1,13 @@
-#ifndef TABLEVIEW_H
-#define TABLEVIEW_H
+#ifndef TABLEMODEL_H
+#define TABLEMODEL_H
 
 #include <QAbstractTableModel>
 
-class TableView : public QAbstractTableModel
+class TableModel : public QAbstractTableModel
 {
     Q_OBJECT
 public:
-    explicit TableView();
+    explicit TableModel();
 
 
 
@@ -20,4 +20,4 @@ public:
     QVariant data(const QModelIndex &index, int role) const;
 };
 
-#endif // TABLEVIEW_H
+#endif // TABLEMODEL_H
