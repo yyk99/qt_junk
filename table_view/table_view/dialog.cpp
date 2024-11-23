@@ -1,7 +1,7 @@
 #include "dialog.h"
 #include "./ui_dialog.h"
 
-#include "tableview.h"
+#include "tablemodel.h"
 
 Dialog::Dialog(QWidget *parent)
     : QDialog(parent)
@@ -9,7 +9,7 @@ Dialog::Dialog(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->tableView->setModel(new TableView());
+    ui->tableView->setModel(new TableModel());
 }
 
 Dialog::~Dialog()
