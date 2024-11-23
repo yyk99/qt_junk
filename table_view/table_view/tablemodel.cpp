@@ -25,3 +25,20 @@ QVariant TableModel::data(const QModelIndex &index, int role) const
     }
     return QVariant();
 }
+
+
+QVariant TableModel::headerData(
+    int section,
+    Qt::Orientation orientation,
+    int role
+    ) const
+{
+    if (role == Qt::DisplayRole)
+    {
+        if (orientation == Qt::Horizontal)
+            return QString("Property %1").arg(section);
+        if (orientation == Qt::Vertical)
+            return section + 1;
+    }
+    return {};
+}
