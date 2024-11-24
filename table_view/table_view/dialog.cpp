@@ -8,8 +8,20 @@ Dialog::Dialog(QWidget *parent)
     , ui(new Ui::Dialog)
 {
     ui->setupUi(this);
-
-    ui->tableView->setModel(new TableModel());
+    auto model = new TableModel();
+    ui->tableView->setModel(model);
+    QHeaderView *hdr = ui->tableView->horizontalHeader();
+    // void QHeaderView::sectionClicked(int logicalIndex)
+    // https://doc.qt.io/qt-5/qheaderview.html#sectionClicked
+    hdr->setSectionsClickable(true);
+    {
+        auto ok = connect(hdr, SIGNAL(sectionClicked(int)), model, SLOT(on_sectionClicked(int)));
+        qDebug() << "ok" << ok;
+    }
+    {
+        auto ok = QObject::connect(hdr, SIGNAL(sectionDoubleClicked(int)), model, SLOT(on_sectionDoubleClicked(int)));
+        qDebug() << "ok" << ok;
+    }
 }
 
 Dialog::~Dialog()

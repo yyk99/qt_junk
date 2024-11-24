@@ -1,10 +1,21 @@
 #include "tablemodel.h"
 
+#include <QDebug>
+
 TableModel::TableModel()
 {
 
 }
 
+void TableModel::on_sectionClicked(int pos)
+{
+    qDebug() << "on_sectionClicked(" << pos << ")";
+}
+
+void TableModel::on_sectionDoubleClicked(int pos)
+{
+    qDebug() << "on_sectionDoubleClicked(" << pos << ")";
+}
 
 int TableModel::rowCount(const QModelIndex &parent) const
 {

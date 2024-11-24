@@ -9,11 +9,14 @@ class TableModel : public QAbstractTableModel
 public:
     explicit TableModel();
 
-
-
-signals:
+//signals:
 
     // QAbstractItemModel interface
+
+public slots:
+    void on_sectionClicked(int);
+    void on_sectionDoubleClicked(int);
+
 public:
     int rowCount(const QModelIndex &parent) const;
     int columnCount(const QModelIndex &parent) const;
