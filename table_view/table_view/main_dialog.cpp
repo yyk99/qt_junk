@@ -1,11 +1,11 @@
-#include "dialog.h"
-#include "./ui_dialog.h"
+#include "main_dialog.h"
+#include "./ui_main_dialog.h"
 
 #include "tablemodel.h"
 
-Dialog::Dialog(QWidget *parent)
+MainDialog::MainDialog(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::Dialog)
+    , ui(new Ui::MainDialog)
 {
     ui->setupUi(this);
     auto model = new TableModel();
@@ -24,7 +24,7 @@ Dialog::Dialog(QWidget *parent)
     }
 }
 
-Dialog::~Dialog()
+MainDialog::~MainDialog()
 {
     delete ui;
 }
