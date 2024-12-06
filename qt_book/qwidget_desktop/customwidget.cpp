@@ -5,6 +5,8 @@
 #include <QLineEdit>
 #include <QListWidget>
 
+#include <QApplication>
+
 CustomWidget::CustomWidget(QWidget *parent) :
     QWidget(parent)
 {
@@ -27,7 +29,7 @@ CustomWidget::CustomWidget(QWidget *parent) :
 
     connect(m_widget, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(itemClicked(QListWidgetItem*)));
     connect(m_edit, SIGNAL(editingFinished()), this, SLOT(updateItem()));
-    // connect(m_button, SIGNAL(clicked()), qApp, SLOT(quit()));
+    connect(m_button, SIGNAL(clicked()), qApp, SLOT(quit()));
 }
 
 void CustomWidget::itemClicked(QListWidgetItem *item)
