@@ -38,6 +38,7 @@ else()
     else()
         add_executable(qt-sql-model
             ${PROJECT_SOURCES}
+            showtabledialog.h showtabledialog.cpp showtabledialog.ui
         )
     endif()
 endif()

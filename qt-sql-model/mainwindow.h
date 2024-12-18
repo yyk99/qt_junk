@@ -17,6 +17,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void on_actionTable_1_triggered();
+    void on_actionTable_2_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
