@@ -39,6 +39,7 @@ else()
     else()
         add_executable(table_view
             ${PROJECT_SOURCES}
+            tablemodel.cpp
         )
     endif()
 endif()
