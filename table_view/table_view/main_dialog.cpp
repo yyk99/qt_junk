@@ -3,6 +3,8 @@
 
 #include "tablemodel.h"
 
+#include <QDebug>
+
 MainDialog::MainDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::MainDialog)
