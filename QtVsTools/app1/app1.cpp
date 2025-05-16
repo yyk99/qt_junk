@@ -54,4 +54,6 @@ app1::onFileConsole()
     attachDebugConsole();
 
     CONSOLE("Hello...");
+    if (auto s = getenv("PATH"))
+      CONSOLE("PATH=" << s);
 }
