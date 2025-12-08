@@ -17,7 +17,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{55A2264F-EACD-46D4-92C8-E599823EF642}</ProjectGuid>
+    <ProjectGuid>{29345B6F-83C9-478F-838D-2FB209B30C91}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
@@ -64,14 +64,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <Link>
-      <AdditionalOptions>/NODEFAULTLIB:msvcrtd.lib %(AdditionalOptions)</AdditionalOptions>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <Link />
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -97,20 +89,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="renderdialogtoo.cpp" />
-    <QtRcc Include="html_renderer_q5.qrc" />
-    <QtUic Include="html_renderer_q5.ui" />
-    <QtMoc Include="html_renderer_q5.h" />
-    <ClCompile Include="html_renderer_q5.cpp" />
+    <QtRcc Include="qt_basic.qrc" />
+    <QtUic Include="qt_basic.ui" />
+    <QtMoc Include="qt_basic.h" />
+    <ClCompile Include="qt_basic.cpp" />
     <ClCompile Include="main.cpp" />
-    <QtUic Include="renderdialogtoo.ui" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\.clang-format" />
-    <None Include="example.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="renderdialogtoo.h" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

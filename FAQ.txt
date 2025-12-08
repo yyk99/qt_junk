@@ -1,0 +1,26 @@
+Q: what does qt_finalize_executable(...) do in CMakeLists.txt
+
+A: The qt_finalize_executable(table_view) function at CMakeLists.txt:71 is a Qt 6-specific command that
+   completes the setup of an executable target.
+
+  Here's what it does:
+
+  1. Works with MANUAL_FINALIZATION: Notice that on line 24, qt_add_executable() is called with the
+  MANUAL_FINALIZATION option. This tells Qt to defer certain finalization steps until you explicitly
+  call qt_finalize_executable().
+  2. Why defer finalization?: This allows you to modify target properties between lines 23-71 (like
+  setting target_link_libraries, set_target_properties, etc.) before Qt applies its final
+  configuration.
+  3. What it finalizes:
+    - Platform-specific setup (Android APK packaging, iOS bundles, WebAssembly, etc.)
+    - Resource file handling
+    - QML module setup if applicable
+    - Deployment configuration
+    - Application metadata and icons
+  4. When it runs: Only for Qt 6 (line 70 checks QT_VERSION_MAJOR EQUAL 6), and it should be called
+  after all target properties are set but before installation rules.
+
+  Without this call, the executable wouldn't be properly configured for deployment on platforms like
+  Android or iOS. For desktop applications like yours (Windows with WIN32_EXECUTABLE), it ensures all
+  Qt-specific packaging is completed correctly.
+
