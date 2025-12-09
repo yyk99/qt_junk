@@ -19,7 +19,6 @@ Projects
 - 05_drawing_shapes/    - QPainter drawing examples
 - 06-qwidget_desktop_sql/ - QWidget application with SQL database
 - qml-01/               - QML basic components (buttons, shapes, text input)
-- 97-qml/               - QML application example
 - 98-qml/               - QML application example
 
 Notes
