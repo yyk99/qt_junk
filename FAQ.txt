@@ -23,4 +23,28 @@ A: The qt_finalize_executable(table_view) function at CMakeLists.txt:71 is a Qt 
   Without this call, the executable wouldn't be properly configured for deployment on platforms like
   Android or iOS. For desktop applications like yours (Windows with WIN32_EXECUTABLE), it ensures all
   Qt-specific packaging is completed correctly.
+  
+Q: How to fix:
+
+   Fix the error: "QQmlApplicationEngine failed to load component
+   qrc:/qt/qml/x-98-qml/Main.qml:1:1: module "QtQuick" is not installed"
+
+A: The error occurs because windeployqt needs to know about your QML files to deploy the necessary QML
+  modules. Let me update the post-build command to include the --qmldir parameter
+  
+  E.g.
+  
+  if(WIN32)
+    add_custom_command(TARGET app98-qml POST_BUILD
+        COMMAND "${Qt6_DIR}/../../../bin/windeployqt.exe"
+            --qmldir "${CMAKE_CURRENT_SOURCE_DIR}"
+            "$<TARGET_FILE:app98-qml>"
+        COMMENT "Running windeployqt on app98-qml..."
+    )
+  endif()
+
+The --qmldir flag tells windeployqt where your QML files are located so it can:
+  1. Scan your QML imports (like QtQuick)
+  2. Deploy all necessary QML modules and plugins
+  3. Copy the required QML runtime files
 

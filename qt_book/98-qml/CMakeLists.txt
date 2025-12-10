@@ -34,6 +34,17 @@ target_link_libraries(app98-qml
     PRIVATE Qt6::Quick
 )
 
+# Add post-build command to run windeployqt
+# (See the explnation in FAQ.txt)
+if(WIN32)
+    add_custom_command(TARGET app98-qml POST_BUILD
+        COMMAND "${Qt6_DIR}/../../../bin/windeployqt.exe"
+            --qmldir "${CMAKE_CURRENT_SOURCE_DIR}"
+            "$<TARGET_FILE:app98-qml>"
+        COMMENT "Running windeployqt on app98-qml..."
+    )
+endif()
+
 include(GNUInstallDirs)
 install(TARGETS app98-qml
     BUNDLE DESTINATION .
