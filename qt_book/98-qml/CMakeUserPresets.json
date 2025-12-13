@@ -1,0 +1,52 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "cherry-debug",
+      "displayName": "Cherry Debug",
+      "description": "Debug build with Qt 6.8.1",
+      "binaryDir": "${sourceDir}/build/cherry-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_PREFIX_PATH": "/home/yyk/Qt/6.8.1/gcc_64",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      },
+      "environment": {
+        "QT_DIR": "/home/yyk/Qt/6.8.1/gcc_64",
+        "PATH": "/home/yyk/Qt/6.8.1/gcc_64/bin:$penv{PATH}"
+      }
+    },
+    {
+      "name": "cherry-release",
+      "displayName": "Cherry Release",
+      "description": "Release build with Qt 6.8.1",
+      "binaryDir": "${sourceDir}/build/cherry-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "/home/yyk/Qt/6.8.1/gcc_64",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      },
+      "environment": {
+        "QT_DIR": "/home/yyk/Qt/6.8.1/gcc_64",
+        "PATH": "/home/yyk/Qt/6.8.1/gcc_64/bin:$penv{PATH}"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "cherry-debug",
+      "displayName": "Cherry Debug Build",
+      "configurePreset": "cherry-debug"
+    },
+    {
+      "name": "cherry-release",
+      "displayName": "Cherry Release Build",
+      "configurePreset": "cherry-release"
+    }
+  ]
+}
