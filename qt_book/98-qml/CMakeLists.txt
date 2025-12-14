@@ -1,0 +1,53 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(98-qml VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(Qt6 REQUIRED COMPONENTS Quick)
+
+qt_standard_project_setup(REQUIRES 6.5)
+
+qt_add_executable(app98-qml
+    main.cpp
+)
+
+qt_add_qml_module(app98-qml
+    URI x-98-qml
+    VERSION 1.0
+    QML_FILES
+        Main.qml
+)
+
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+set_target_properties(app98-qml PROPERTIES
+#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.app98-qml
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
+)
+
+target_link_libraries(app98-qml
+    PRIVATE Qt6::Quick
+)
+
+# Add post-build command to run windeployqt
+# (See the explnation in FAQ.txt)
+if(WIN32)
+    add_custom_command(TARGET app98-qml POST_BUILD
+        COMMAND "${Qt6_DIR}/../../../bin/windeployqt.exe"
+            --qmldir "${CMAKE_CURRENT_SOURCE_DIR}"
+            "$<TARGET_FILE:app98-qml>"
+        COMMENT "Running windeployqt on app98-qml..."
+    )
+endif()
+
+include(GNUInstallDirs)
+install(TARGETS app98-qml
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
